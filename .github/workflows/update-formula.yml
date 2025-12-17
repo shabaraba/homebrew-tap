@@ -31,11 +31,9 @@ jobs:
 
           # Calculate SHA256
           SHA_DARWIN_ARM64=$(shasum -a 256 shaba-cli-darwin-arm64 | cut -d ' ' -f 1)
-          SHA_DARWIN_X64=$(shasum -a 256 shaba-cli-darwin-x64 | cut -d ' ' -f 1)
           SHA_LINUX_X64=$(shasum -a 256 shaba-cli-linux-x64 | cut -d ' ' -f 1)
 
           echo "SHA_DARWIN_ARM64=$SHA_DARWIN_ARM64" >> "$GITHUB_ENV"
-          echo "SHA_DARWIN_X64=$SHA_DARWIN_X64" >> "$GITHUB_ENV"
           echo "SHA_LINUX_X64=$SHA_LINUX_X64" >> "$GITHUB_ENV"
           echo "VER=$VER" >> "$GITHUB_ENV"
 
@@ -49,20 +47,11 @@ jobs:
             license "MIT"
 
             on_macos do
-              if Hardware::CPU.arm?
-                url "https://github.com/shabaraba/shaba-cli/releases/download/vVERSION_PLACEHOLDER/shaba-cli-darwin-arm64"
-                sha256 "SHA_DARWIN_ARM64_PLACEHOLDER"
+              url "https://github.com/shabaraba/shaba-cli/releases/download/vVERSION_PLACEHOLDER/shaba-cli-darwin-arm64"
+              sha256 "SHA_DARWIN_ARM64_PLACEHOLDER"
 
-                def install
-                  bin.install "shaba-cli-darwin-arm64" => "shaba-cli"
-                end
-              else
-                url "https://github.com/shabaraba/shaba-cli/releases/download/vVERSION_PLACEHOLDER/shaba-cli-darwin-x64"
-                sha256 "SHA_DARWIN_X64_PLACEHOLDER"
-
-                def install
-                  bin.install "shaba-cli-darwin-x64" => "shaba-cli"
-                end
+              def install
+                bin.install "shaba-cli-darwin-arm64" => "shaba-cli"
               end
             end
 
@@ -83,7 +72,6 @@ jobs:
 
           sed -i "s/VERSION_PLACEHOLDER/$VER/g" Formula/shaba-cli.rb
           sed -i "s/SHA_DARWIN_ARM64_PLACEHOLDER/$SHA_DARWIN_ARM64/g" Formula/shaba-cli.rb
-          sed -i "s/SHA_DARWIN_X64_PLACEHOLDER/$SHA_DARWIN_X64/g" Formula/shaba-cli.rb
           sed -i "s/SHA_LINUX_X64_PLACEHOLDER/$SHA_LINUX_X64/g" Formula/shaba-cli.rb
 
       - name: Commit and push

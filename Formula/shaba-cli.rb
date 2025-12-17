@@ -5,20 +5,11 @@ class ShabaCli < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/shabaraba/shaba-cli/releases/download/v#{version}/shaba-cli-darwin-arm64"
-      sha256 "PLACEHOLDER"
+    url "https://github.com/shabaraba/shaba-cli/releases/download/v#{version}/shaba-cli-darwin-arm64"
+    sha256 "PLACEHOLDER"
 
-      def install
-        bin.install "shaba-cli-darwin-arm64" => "shaba-cli"
-      end
-    else
-      url "https://github.com/shabaraba/shaba-cli/releases/download/v#{version}/shaba-cli-darwin-x64"
-      sha256 "PLACEHOLDER"
-
-      def install
-        bin.install "shaba-cli-darwin-x64" => "shaba-cli"
-      end
+    def install
+      bin.install "shaba-cli-darwin-arm64" => "shaba-cli"
     end
   end
 

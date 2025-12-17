@@ -1,12 +1,12 @@
 class ShabaCli < Formula
   desc "Personal CLI toolkit by shabaraba"
   homepage "https://github.com/shabaraba/shaba-cli"
-  version "0.1.6"
+  version "0.1.7"
   license "MIT"
 
   on_macos do
-    url "https://github.com/shabaraba/shaba-cli/releases/download/v0.1.6/shaba-cli-darwin-arm64"
-    sha256 "bc4176891443f986a11873419335da1260d520bc32d3e3c2ccc212601ac1b15b"
+    url "https://github.com/shabaraba/shaba-cli/releases/download/v0.1.7/shaba-cli-darwin-arm64"
+    sha256 "cbce5b3011f14ee449df90f5019850ef6f16d60728a346caf9927ee83352eb57"
 
     def install
       bin.install "shaba-cli-darwin-arm64" => "shaba-cli"
@@ -14,8 +14,8 @@ class ShabaCli < Formula
   end
 
   on_linux do
-    url "https://github.com/shabaraba/shaba-cli/releases/download/v0.1.6/shaba-cli-linux-x64"
-    sha256 "443a2f5a3c49adf4a70c4d3da7c42c83f2f2a3daee820395e123223f2edcbc85"
+    url "https://github.com/shabaraba/shaba-cli/releases/download/v0.1.7/shaba-cli-linux-x64"
+    sha256 "56ff26d40fcc6539314ed4e1c9417868704568bc8d905d81624c04a59e50682f"
 
     def install
       bin.install "shaba-cli-linux-x64" => "shaba-cli"

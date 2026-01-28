@@ -1,25 +1,25 @@
 class Mote < Formula
   desc "A fine-grained snapshot management tool for projects"
   homepage "https://github.com/shabaraba/mote"
-  version "0.2.0"
+  version "0.2.1"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/shabaraba/mote/releases/download/v#{version}/mote-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "22f231ea0ccb9051bd9228e1f5bf6ab5a4bdedeab5619ac655761b4fb9e8112b" # ARM64 macOS
+      sha256 "bffa6435dd558be4f0e0e6328fa1b493b007138ce04addc83a8c2a5d0377940a" # ARM64 macOS
     else
       url "https://github.com/shabaraba/mote/releases/download/v#{version}/mote-v#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "e2757cb5ceb8c9cbff209e0104eb5a661a12cfe97f36b0d12454ea87fd5842a0" # x86_64 macOS
+      sha256 "4fdb22b05b9ed6c24013526dfeb0127f2ba2f6c113374c2b2b6faddf40529965" # x86_64 macOS
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/shabaraba/mote/releases/download/v#{version}/mote-v#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "c7758bc0322eb6c1b8e7b58a9c7e6e6cf65501b6ece266787ff3acd4dd4f79ca" # ARM64 Linux
+      sha256 "56bbcf01a2e4c396d1d3598363a121cd6ea7885f5a9fddec696efaa221162857" # ARM64 Linux
     else
       url "https://github.com/shabaraba/mote/releases/download/v#{version}/mote-v#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "b3e9276410899845006ea76d5cdf1df8b27154685db83463394a9f12a3048834" # x86_64 Linux
+      sha256 "c79006e4f194c9cd67034be650bb0f4b18302d401a2fb8dc5fa2d389b9e8b33b" # x86_64 Linux
     end
   end
 
